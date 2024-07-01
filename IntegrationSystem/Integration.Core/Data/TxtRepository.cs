@@ -53,7 +53,6 @@ internal class TxtRepository : Repository
 
             using (IDbConnection conn = Connect())
             {
-                await conn.ExecuteAsync(GetDeleteNoWhereStatement());
                 await conn.ExecuteAsync(command);
             }
         }

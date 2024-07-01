@@ -15,4 +15,6 @@ public class Repository
     }
 
     protected static string GetDeleteNoWhereStatement() => "DELETE FROM monolito";
+
+
 }

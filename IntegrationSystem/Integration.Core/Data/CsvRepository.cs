@@ -8,6 +8,15 @@ namespace Integration.Core.Data;
 
 public class CsvRepository : Repository
 {
+    public static async Task DeletarCsv()
+    {
+        using (IDbConnection conn = Connect())
+        {
+                await conn.ExecuteAsync(GetDeleteNoWhereStatement());
+        }
+
+    }
+
     public static async Task InserirAsync(DataModel model)
     {
         try
@@ -32,8 +41,7 @@ public class CsvRepository : Repository
 
             using (IDbConnection conn = Connect())
             {
-                await conn.ExecuteAsync(GetDeleteNoWhereStatement());
-                await conn.ExecuteAsync(command); 
+                await conn.ExecuteAsync(command);
             }
         }
         catch (Exception ex)

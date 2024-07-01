@@ -56,11 +56,11 @@ namespace Integration.Core.Csv
 
                 // Criando o conteúdo do CSV
                 var csvBuilder = new StringBuilder();
-                csvBuilder.AppendLine("Id,Genero,Categoria,Midia,TipoMidia,Classificacao,Participante"); // Cabeçalho
+                csvBuilder.AppendLine("Id;Genero;Categoria;Midia;TipoMidia;Classificacao;Participante"); // Cabeçalho
 
                 foreach (var item in monolitoItens)
                 {
-                    var linhaCsv = $"{item.Id},{item.Genero},{item.Categoria},{item.Midia},{item.TipoMidia},{item.Classificacao},{item.Participante}";
+                    var linhaCsv = $"{item.Id};{item.Genero};{item.Categoria};{item.Midia};{item.TipoMidia};{item.Classificacao};{item.Participante}";
                     csvBuilder.AppendLine(linhaCsv);
                 }
 
